@@ -24,8 +24,7 @@ You are moving from Xyleme to a **Markdown + GitHub** workflow. Here is a plain-
    - If Windows asks "Do you want to allow this app to make changes?" click **Yes**.
    - If Windows blocks the file: right-click it, select **Properties**, check the **Unblock** box, click **OK**, then double-click again.
 3. Follow the installer wizard. The default options on every screen are fine. Click **Next** through each screen and then **Install**.
-4. When the installer finishes, click **Finish**. VSCode will open.
-5. You can close VSCode for now — you will come back to it shortly.
+4. When the installer finishes, click **Finish**. VSCode will open — continue straight to Part 2.
 
 ---
 
@@ -33,11 +32,10 @@ You are moving from Xyleme to a **Markdown + GitHub** workflow. Here is a plain-
 
 VSCode lets you keep separate "profiles" — think of them like separate desks, each with their own settings and sign-ins. This keeps your Cisco work separate from any other VSCode work you might do.
 
-1. Open VSCode.
-2. Click the **person icon** at the very bottom-left of the window (it looks like a silhouette).
-3. Click **Profiles** → **Create Profile**.
-4. Name it something like `Skyline / Cisco` and click **Create**.
-5. VSCode will reload into the new profile. You will see the profile name in the bottom-left corner.
+1. Click the **person icon** at the very bottom-left of the VSCode window (it looks like a silhouette).
+2. Click **Profiles** → **Create Profile**.
+3. Name it `Skyline / Cisco` and click **Create**.
+4. VSCode will reload into the new profile. You will see the profile name in the bottom-left corner.
 
 > **Always make sure you are in the Skyline / Cisco profile before doing any work.** You can check and switch profiles by clicking the person icon at the bottom-left.
 
@@ -67,7 +65,7 @@ Git is the software that tracks your file changes and talks to GitHub. You need 
    - On the **Adjusting your PATH environment** screen: leave the recommended option selected ("Git from the command line and also from 3rd-party software").
    - If you see an option for **Git LFS**: make sure it is **checked**.
 4. Click **Finish** when done.
-5. Close any open Command Prompt windows and reopen a fresh one.
+5. Close any open Command Prompt windows and reopen a fresh one before continuing.
 
 ### Enable Git LFS
 
@@ -100,11 +98,10 @@ An SSH key is a digital ID card that lets GitHub recognise your computer. You on
 ### Check if you already have an SSH key
 
 1. Open **Command Prompt**.
-2. Type:
+2. Type (replace `YOUR-WINDOWS-USERNAME` with your actual Windows login name, e.g. `jsmith`):
    ```
    cd C:\Users\YOUR-WINDOWS-USERNAME\.ssh
    ```
-   Replace `YOUR-WINDOWS-USERNAME` with your actual Windows login name (e.g. `jsmith`).
 3. Then type:
    ```
    dir
@@ -141,8 +138,6 @@ An SSH key is a digital ID card that lets GitHub recognise your computer. You on
 
 ### Add the public key to GitHub
 
-Now you need to give GitHub a copy of your key so it can recognise you.
-
 1. Open **File Explorer** and navigate to `C:\Users\YOUR-WINDOWS-USERNAME\.ssh\`.
 2. Find the file called `id_ed25519.pub`.
    - **Note:** It may look like a Microsoft Publisher file icon. It is not. Right-click it → **Open with** → **Notepad**.
@@ -167,19 +162,19 @@ Now you need to give GitHub a copy of your key so it can recognise you.
    ```
    Hi USERNAME! You've successfully authenticated, but GitHub does not provide shell access.
    ```
-   If your username appears — you are connected. 
+   If your username appears — you are connected.
 
 ---
 
 ## Part 5 — Install VSCode extensions
 
-Extensions add extra features to VSCode. You need three of them.
+Extensions add extra features to VSCode. You need two extensions now, and one more after you clone the repository in Part 6.
 
 ### Install the GitHub Pull Request extension
 
 This lets you manage your work submissions (Pull Requests) directly from VSCode.
 
-1. Open VSCode (make sure you are in your **Skyline / Cisco** profile).
+1. Open VSCode and make sure you are in your **Skyline / Cisco** profile.
 2. Click the **Extensions** icon in the left sidebar (it looks like four squares, one slightly separated).
 3. In the search box at the top, type `GitHub Pull Request`.
 4. Find **GitHub Pull Requests** in the list and click **Install**.
@@ -192,52 +187,54 @@ Marp lets you create presentation slides from your content.
 1. In the Extensions panel, search for `marp`.
 2. Find **Marp for VS Code** and click **Install**.
 
-### Install the Cisco U Preview extension
-
-This shows you how your content will look inside the Cisco U learning platform while you are writing it.
-
-The extension file is stored in the Skyline DevTeam-Sandbox repository. You will download it as part of cloning that repo in Part 6. For now, continue to the next step.
-
 ---
 
-## Part 6 — Clone the Skyline DevTeam Sandbox repository
+## Part 6 — Clone the Skyline DevTeam Sandbox and finish setup
 
 Cloning means making a local copy of a repository on your computer. The **DevTeam-Sandbox** is a safe practice space — you can make mistakes here without affecting any real content.
 
-1. Open VSCode (in your **Skyline / Cisco** profile).
-2. Press `Ctrl+Shift+P` to open the **Command Palette**.
-3. Type `Git: Clone` and select it from the list.
-4. When the input box appears, paste the following URL and press **Enter**:
+### Clone the repository
+
+1. Press `Ctrl+Shift+P` to open the **Command Palette**.
+2. Type `Git: Clone` and select it from the list.
+3. A box appears at the top of the screen. It may show a dropdown list of repositories — ignore the list and type or paste the following URL directly into the box, then press **Enter**:
    ```
    git@github.com:skyline-ats/DevTeam-Sandbox.git
    ```
-5. A folder picker will appear. Choose where you want to save it on your computer (e.g. `Documents`). VSCode will create a `DevTeam-Sandbox` folder there automatically.
-6. When prompted **"Would you like to open the cloned repository?"** click **Open**.
+4. A folder picker will appear. Choose where you want to save it on your computer (e.g. `Documents`). VSCode will create a `DevTeam-Sandbox` folder there automatically.
+5. When prompted **"Would you like to open the cloned repository?"** click **Open**.
 
 You are now looking at the DevTeam-Sandbox in VSCode.
 
-### Install the Cisco U Preview extension from the repo
+### Install the Cisco U Preview extension
 
-Now that you have cloned the repo, you can install the preview extension.
+This shows you how your content will look inside the Cisco U learning platform while you are writing it. The extension file is included in the repository you just cloned.
 
-1. In VSCode, open the **Explorer** panel (left sidebar, top icon — looks like two pages).
-2. Navigate into the `extensions` folder.
-3. Right-click the file `cisco-u-preview-0.41.0.vsix` and select... actually, follow these steps instead:
-   - Press `Ctrl+Shift+P` to open the Command Palette.
-   - Type `Extensions: Install from VSIX` and select it.
-   - Navigate to the `extensions` folder inside `DevTeam-Sandbox` and select `cisco-u-preview-0.41.0.vsix`.
-   - Click **Install**.
-4. Restart VSCode when prompted.
+1. Press `Ctrl+Shift+P` to open the Command Palette.
+2. Type `Extensions: Install from VSIX` and select it.
+3. In the file picker, navigate to the `extensions` folder inside `DevTeam-Sandbox` and select `cisco-u-preview-0.41.0.vsix`.
+4. Click **Install**.
+5. Restart VSCode when prompted.
 
 ---
 
-## Part 7 — Your first practice: Clone, edit, commit, push
+## Part 7 — Your first practice: edit, commit, push
 
 Now you will make a real change to the DevTeam-Sandbox. This is your practice run of the full authoring workflow.
 
+### Before you start — pull the latest changes
+
+Before doing any work, always pull first to make sure your local copy is up to date with whatever anyone else may have added.
+
+1. Click the **Source Control** icon in the left sidebar (it looks like a branching tree — third icon down).
+2. Click the **...** (three dots) menu at the top of the Source Control panel.
+3. Select **Pull**.
+
+> If you just cloned the repo a moment ago you can skip this — you already have the latest. But pulling first will become a habit that saves you headaches when working with others.
+
 ### Step 1 — Create a branch
 
-**Never edit directly on the `main` branch.** Always create your own branch first.
+**Never edit directly on the `main` branch.** Always create your own branch first. A branch is your own private workspace — nothing you do there affects the main content until you choose to merge it.
 
 1. Look at the very bottom-left of the VSCode window. You will see the word `main` (the current branch).
 2. Click on `main`.
@@ -245,11 +242,9 @@ Now you will make a real change to the DevTeam-Sandbox. This is your practice ru
 4. Type a name for your branch — use your name or initials (e.g. `jsmith-practice`). Use lowercase and hyphens only — no spaces.
 5. Press **Enter**. The branch name in the bottom-left will change to your new branch name.
 
-> You are now working in your own isolated copy. Nothing you do here affects the `main` branch until you choose to merge it.
-
 ### Step 2 — Create a practice file
 
-1. In the Explorer panel, right-click in an empty area → **New File**.
+1. In the Explorer panel (left sidebar, top icon), right-click in an empty area → **New File**.
 2. Name it `practice-YOUR-NAME.md` (e.g. `practice-jsmith.md`).
 3. Click on the file to open it and type a few lines — anything you like. For example:
    ```
@@ -269,9 +264,9 @@ Now you will make a real change to the DevTeam-Sandbox. This is your practice ru
 
 ### Step 4 — Stage and commit your changes
 
-"Committing" saves a snapshot of your changes locally.
+"Committing" saves a snapshot of your changes locally — think of it like hitting Save in Xyleme, except it also records what changed and why.
 
-1. Click the **Source Control** icon in the left sidebar (it looks like a branching tree — third icon down).
+1. Click the **Source Control** icon in the left sidebar.
 2. Under **Changes**, you will see your new file listed.
 3. Hover over your file and click the **+** icon that appears — this "stages" the file (marks it ready to commit).
 4. In the text box at the top that says **Message**, type a short description of what you did. For example: `Add practice file for jsmith`.
@@ -284,7 +279,8 @@ Your change is now saved locally.
 "Pushing" uploads your local commits to GitHub so the team can see them.
 
 1. After committing, you will see a **Publish Branch** or **Sync Changes** button in the Source Control panel (or in the status bar at the bottom). Click it.
-2. If asked whether to publish to GitHub, click **OK** or **Publish Branch**.
+2. VSCode may open a browser window asking you to sign in to GitHub — go ahead and sign in with your GitHub account. This only happens the first time.
+3. If asked whether to publish to GitHub, click **OK** or **Publish Branch**.
 
 ### Step 6 — Verify on GitHub
 
@@ -292,23 +288,11 @@ Your change is now saved locally.
 2. Click the **branch dropdown** (it says `main` by default) and look for your branch name.
 3. Select your branch — you should see your practice file there.
 
-Congratulations — you have completed the full Git workflow: **create branch → edit → commit → push**.
+**Congratulations — you have completed the full Git workflow: pull, create branch, edit, commit, push.**
 
 ---
 
-## Part 8 — Pulling updates from GitHub
-
-Before starting work each day, always pull the latest changes from GitHub so your local copy is up to date.
-
-1. In VSCode, click the **Source Control** icon.
-2. Click the **...** (three dots) menu at the top of the Source Control panel.
-3. Select **Pull**.
-
-That's it. VSCode will download any changes made by others.
-
----
-
-## Part 9 — Using the Cisco U Preview
+## Part 8 — Using the Cisco U Preview
 
 Once you are working on actual Cisco content files:
 
@@ -322,13 +306,13 @@ Once you are working on actual Cisco content files:
 
 | What you want to do | How to do it |
 |---|---|
-| Start work for the day | Pull latest changes (Source Control → `...` → Pull) |
-| Create a new branch | Click branch name bottom-left → `+ Create new branch` |
-| Save a snapshot of your work | Stage files (`+`) → add a message → click Commit |
-| Share your work with the team | Click Publish Branch / Sync Changes in Source Control |
+| Start work for the day | Pull latest (Source Control, three dots menu, Pull) |
+| Create a new branch | Click branch name bottom-left, then + Create new branch |
+| Save a snapshot of your work | Stage files (+), add a message, click Commit |
+| Share your work with the team | Click Publish Branch or Sync Changes in Source Control |
 | Check what branch you are on | Look at bottom-left corner of VSCode |
-| Preview your Markdown | `Ctrl+Shift+P` → `Cisco U: Preview` |
-| Open the Command Palette | `Ctrl+Shift+P` |
+| Preview content in Cisco U style | Ctrl+Shift+P, then Cisco U: Preview |
+| Open the Command Palette | Ctrl+Shift+P |
 
 ---
 
@@ -336,4 +320,4 @@ Once you are working on actual Cisco content files:
 
 Once you are comfortable with the Sandbox, the next step is to clone the Cisco content repositories. Your Skyline team lead will share the repository URLs with you and confirm you have been added as a collaborator.
 
-The workflow is identical — the only difference is that you will be working on real content, so treat the `main` branch with care.
+The workflow is identical — the only difference is that you will be working on real content, so treat the `main` branch with care and always work in your own branch.
