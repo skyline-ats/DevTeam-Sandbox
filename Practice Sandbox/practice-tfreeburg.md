@@ -32,3 +32,9 @@ What state and city do you prefer?
 ## Row 2 Col 1 | Row 2 Col 2 | Row 2 Col 3
 
 </TableSimple>
+
+<CustomNote>
+Make sure you choose wisely.
+
+</CustomNote>
+
