@@ -51,3 +51,27 @@ Content test for tab two..... This one is not working!
 
 3rd test push and pull
 again
+
+changes for push 7/13 ::: Terminal Objective "Overall learning objective for this assessment"
+
+<AssessmentQG>
+
+<QuestionMC>
+
+::: Enabling Objective "Enabling objective for question 1"
+
+Question 1 text?
+
+::: Answers
+
+- [x] Correct answer
+- [ ] Incorrect answer 1
+- [ ] Incorrect answer 2
+
+::: Feedback
+
+Feedback for question 1.
+
+</QuestionMC>
+
+</AssessmentQG>
