@@ -321,3 +321,40 @@ Once you are working on actual Cisco content files:
 Once you are comfortable with the Sandbox, the next step is to clone the Cisco content repositories. Your Skyline team lead will share the repository URLs with you and confirm you have been added as a collaborator.
 
 The workflow is identical — the only difference is that you will be working on real content, so treat the `main` branch with care and always work in your own branch.
+
+Making changed at the end 
+<TableComplex>
+
+# "Column 1"
+# "Column 2"
+# "Column 3"
+
+::: Row
+
+::: Data
+
+Cell 1,1 — supports **markdown**, lists, code blocks.
+
+::: Data
+
+Cell 1,2
+
+::: Data
+
+Cell 1,3
+
+::: Row
+
+::: Data
+
+Cell 2,1
+
+::: Data
+
+Cell 2,2
+
+::: Data
+
+Cell 2,3
+
+</TableComplex>
