@@ -1,3 +1,0 @@
-# Great work! You have reached the end of the track.
-
-This is the Post-Assessment. The questions in this exam will test your understanding of the material that you have covered in the previous courses. You will have unlimited time to complete this assessment, and you may take it multiple times. To obtain a passing score, you must answer 80% or more of the questions correctly. Passing this assessment will mark the track as complete and will count toward the overall completion of the learning path.
