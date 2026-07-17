@@ -1,0 +1,39 @@
+# =============================================================================
+# PCS Integration - Module Repository Trigger
+# =============================================================================
+#
+# This minimal trigger calls the centralized PCS workflow which handles:
+# - PR validation via check_course API
+# - Deployment to CDP Review via deploy_course API
+# - courseId derivation from repo name
+#
+# TRIGGERS:
+# - pull_request (opened, synchronize, reopened): Runs check_course validation
+#   Note: synchronize means PCS re-runs when new commits are pushed to the PR,
+#   including when Editorial generates and commits GUIDs. This ensures PCS
+#   validates the final content with GUIDs present.
+# - push to main: Runs deploy_course after PR is merged
+#
+# The central workflow checks for GUIDs before deploying, so new repos
+# created from template will safely skip deployment until content goes
+# through a PR where editorial checks generate GUIDs.
+#
+# =============================================================================
+
+name: PCS Integration
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [main]
+  push:
+    branches: [main]
+
+concurrency:
+  group: pcs-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pcs:
+    uses: LwC-ContentHub/.github/.github/workflows/pcs-integration.yml@main
+    secrets: inherit

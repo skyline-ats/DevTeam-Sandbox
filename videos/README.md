@@ -1,0 +1,1 @@
+Add the video files, thumbnails and transcripts for use in content in this folder. E.g. mp4, vtt, jpg etc.
