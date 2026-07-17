@@ -1,1 +1,0 @@
-Add image files that will be used in labs in this directory. You can add more subfolders if you wish, so long as you link to them correctly in the lab markdown content.
