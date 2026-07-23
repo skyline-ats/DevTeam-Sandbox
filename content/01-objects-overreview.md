@@ -73,7 +73,7 @@ You can create an Access Control Policy rule:
 
 A dynamic attribute defines how an object is populated, rather than specifying the actual IP addresses. Therefore, as new servers are deployed or removed, the firewall updates the object automatically without requiring a policy change.
 
-<TabsAccordion>
+<TabsHorizontal>
 
 # Supported Dynamic Attributes
 
@@ -108,7 +108,7 @@ The following screenshot shows the Dynamic Objects page in Secure Firewall Manag
 
 Content for section two.
 
-</TabsAccordion>
+</TabsHorizontal>
 
 
 ### 
@@ -143,17 +143,6 @@ Dynamic attribute objects populate their contents from external sources, allowin
 
 </QuestionMC>
 
-<TabsAccordion>
-
-# Section One
-
-Content for section one.
-
-# Section Two
-
-Content for section two.
-
-</TabsAccordion>
 - first
    - sublist
 - second
