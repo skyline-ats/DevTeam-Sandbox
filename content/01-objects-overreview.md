@@ -1,8 +1,8 @@
 # Objects Overview, Management, and Dynamic Attributes
 
-As you prepare to deploy Cisco Secure Firewall Threat Defense, you realize how much the configuration relies on the use of objects. Organizing reusable objects and dynamic resources from the start simplifies policy management, reduces administrative effort, and makes it easier to adapt as your network and cloud environments evolve.
+## As you prepare to deploy Cisco Secure Firewall Threat Defense, you realize how much the configuration relies on the use of objects. Organizing reusable objects and dynamic resources from the start simplifies policy management, reduces administrative effort, and makes it easier to adapt as your network and cloud environments evolve.
 
-This training explains how to create and manage objects, object groups, and dynamic attributes to build scalable, reusable, and easier-to-maintain firewall policies.
+## wHY, cISCO?  whY?
 
 ## Object Fundamentals
 
@@ -73,7 +73,7 @@ You can create an Access Control Policy rule:
 
 A dynamic attribute defines how an object is populated, rather than specifying the actual IP addresses. Therefore, as new servers are deployed or removed, the firewall updates the object automatically without requiring a policy change.
 
-<TabsHorizontal>
+<TabsAccordion>
 
 # Supported Dynamic Attributes
 
@@ -108,7 +108,7 @@ The following screenshot shows the Dynamic Objects page in Secure Firewall Manag
 
 Content for section two.
 
-</TabsHorizontal>
+</TabsAccordion>
 
 
 ### 
@@ -143,6 +143,17 @@ Dynamic attribute objects populate their contents from external sources, allowin
 
 </QuestionMC>
 
+<TabsAccordion>
+
+# Section One
+
+Content for section one.
+
+# Section Two
+
+Content for section two.
+
+</TabsAccordion>
 - first
    - sublist
 - second
